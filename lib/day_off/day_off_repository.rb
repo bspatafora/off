@@ -1,12 +1,12 @@
 class DayOffRepository
   def initialize
     @days_off = {}
-    @index = 1
   end
 
   def store(day_off)
-    @days_off[@index] = day_off
-    @index += 1
+    id = day_off.id || index
+
+    @days_off[id] = day_off
   end
 
   def retrieve(id)
@@ -15,5 +15,11 @@ class DayOffRepository
 
   def remove(id)
     @days_off.delete(id)
+  end
+
+  private
+
+  def index
+    @days_off.size + 1
   end
 end

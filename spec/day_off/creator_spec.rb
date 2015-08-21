@@ -20,10 +20,6 @@ describe 'a day off creator' do
 
     creator.do(json(day_off))
 
-    retrieved_day_off = repository.retrieve(day_off.id)
-    expect(retrieved_day_off.user_id).to eq day_off.user_id
-    expect(retrieved_day_off.start_time).to eq day_off.start_time
-    expect(retrieved_day_off.end_time).to eq day_off.end_time
-    expect(retrieved_day_off.type_id).to eq day_off.type_id
+    expect(repository.retrieve(day_off.id)).to eq day_off
   end
 end

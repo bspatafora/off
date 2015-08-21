@@ -7,7 +7,9 @@ class DayOffCreator
   end
 
   def do(params)
-    day_off = DayOff.new(JSON.parse(params, symbolize_names: true))
+    parsed_params = JSON.parse(params, symbolize_names: true)
+
+    day_off = DayOff.new(parsed_params)
     @repository.store(day_off)
   end
 end
