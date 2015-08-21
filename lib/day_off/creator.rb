@@ -1,5 +1,6 @@
-require 'day_off/day_off'
 require 'json'
+
+require_relative 'day_off'
 
 class DayOffCreator
   def initialize(repository)

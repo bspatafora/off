@@ -1,5 +1,6 @@
-require 'day_off/day_off'
-require 'day_off/day_off_repository'
+require_relative '../../lib/day_off/day_off'
+require_relative '../../lib/day_off/day_off_repository'
+require_relative 'factory'
 
 describe 'a day off repository' do
   it 'stores days off' do

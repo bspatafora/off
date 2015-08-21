@@ -1,6 +1,8 @@
 require 'json'
-require 'day_off/creator'
-require 'day_off/factory'
+
+require_relative '../../lib/day_off/creator'
+require_relative '../../lib/day_off/day_off_repository'
+require_relative 'factory'
 
 describe 'a day off creator' do
   def json(day_off)

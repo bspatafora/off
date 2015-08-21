@@ -1,4 +1,4 @@
-require 'day_off/day_off'
+require_relative '../../lib/day_off/day_off'
 
 class DayOffFactory
   def self.make(args = {})
