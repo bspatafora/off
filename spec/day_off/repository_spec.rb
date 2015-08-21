@@ -1,11 +1,11 @@
-require_relative '../../lib/day_off/day_off'
-require_relative '../../lib/day_off/day_off_repository'
+require_relative '../../lib/day_off/model'
+require_relative '../../lib/day_off/repository'
 require_relative 'factory'
 
 describe 'a day off repository' do
   it 'stores days off' do
-    repository = DayOffRepository.new
-    day_off = DayOffFactory.make
+    repository = DayOff::Repository.new
+    day_off = DayOff::Factory.make
 
     repository.store(day_off)
 
@@ -13,8 +13,8 @@ describe 'a day off repository' do
   end
 
   it 'removes days off' do
-    day_off_repository = DayOffRepository.new
-    day_off_repository.store(DayOff.new)
+    day_off_repository = DayOff::Repository.new
+    day_off_repository.store(DayOff::Model.new)
     expect(day_off_repository.retrieve(1)).not_to eq nil
 
     day_off_repository.remove(1)

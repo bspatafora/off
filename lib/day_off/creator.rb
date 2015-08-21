@@ -1,16 +1,18 @@
 require 'json'
 
-require_relative 'day_off'
+require_relative 'model'
 
-class DayOffCreator
-  def initialize(repository)
-    @repository = repository
+module DayOff
+  class Creator
+    def initialize(repository)
+      @repository = repository
+    end
+
+    def do(params)
+      parsed_params = JSON.parse(params, symbolize_names: true)
+
+      day_off = DayOff::Model.new(parsed_params)
+      @repository.store(day_off)
+    end
+    end
   end
-
-  def do(params)
-    parsed_params = JSON.parse(params, symbolize_names: true)
-
-    day_off = DayOff.new(parsed_params)
-    @repository.store(day_off)
-  end
-end

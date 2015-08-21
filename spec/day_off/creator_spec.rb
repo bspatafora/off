@@ -1,7 +1,7 @@
 require 'json'
 
 require_relative '../../lib/day_off/creator'
-require_relative '../../lib/day_off/day_off_repository'
+require_relative '../../lib/day_off/repository'
 require_relative 'factory'
 
 describe 'a day off creator' do
@@ -16,9 +16,9 @@ describe 'a day off creator' do
   end
 
   it 'creates days off from JSON params' do
-    repository = DayOffRepository.new
-    creator = DayOffCreator.new(repository)
-    day_off = DayOffFactory.make
+    repository = DayOff::Repository.new
+    creator = DayOff::Creator.new(repository)
+    day_off = DayOff::Factory.make
 
     creator.do(json(day_off))
 
