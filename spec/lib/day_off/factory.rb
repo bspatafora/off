@@ -1,4 +1,5 @@
-require_relative '../../lib/day_off/model'
+require_relative '../../../lib/day_off/model'
+require_relative '../../spec_helper'
 
 module DayOff
   class Factory

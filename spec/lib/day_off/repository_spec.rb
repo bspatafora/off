@@ -1,6 +1,7 @@
-require_relative '../../lib/day_off/model'
-require_relative '../../lib/day_off/repository'
+require_relative '../../../lib/day_off/model'
+require_relative '../../../lib/day_off/repository'
 require_relative 'factory'
+require_relative '../../spec_helper'
 
 describe 'a day off repository' do
   it 'stores days off' do
