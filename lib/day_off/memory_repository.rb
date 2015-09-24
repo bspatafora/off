@@ -1,5 +1,5 @@
 module DayOff
-  class Repository
+  class MemoryRepository
     def initialize
       @days_off = {}
     end
